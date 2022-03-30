@@ -1,12 +1,9 @@
-import {Layout} from "../components/index";
-
-function MyApp({ Component, pageProps}) {
+import {Layout} from "components/index";
+function MyApp({ Component,pageProps }) {
   return (
     <Layout>
-      <Component {...pageProps} />
+    <Component{...pageProps}/>
     </Layout>
   )
 }
-
 export default MyApp
-
