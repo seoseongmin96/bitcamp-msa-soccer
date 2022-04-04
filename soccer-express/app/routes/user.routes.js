@@ -13,8 +13,8 @@ module.exports = function(app){
     )
   });
   //next();
-  app.get("", ()=>{})
-  app.post("", ()=>{})
+  app.get("", (req, res)=>{})
+  
   app.update('', ()=>{})
   app.delete('', ()=>{})
 }
