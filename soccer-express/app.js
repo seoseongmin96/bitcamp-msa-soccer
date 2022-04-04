@@ -1,6 +1,7 @@
 require('dotenv').config();
 var cors = require('cors')
 const express = require('express');
+const res = require('express/lib/response');
 const mongoose = require('mongoose');
 const app = express();
 const { port, MONGO_URI } = process.env;
@@ -67,3 +68,45 @@ app.post("/api/basic/bmi", (req, res)=>{
   console.log(`계산된 JSON 값 : ${JSON.stringify(json)}`)
   res.json(json)
 })
+
+function computeCALC(num1, num2, opcode){
+  console.log('### 진입 ### ')
+  let_num1 = Number(num1)
+  let_num2 = Number(num2)
+  
+  var result = {num1, num2, opcode}
+  console.log(`계산중인 값들 :${JSON.stringify(result)}`)
+
+  switch (opcode){
+    case "+" :
+        result.calc = Number(num1) + Number(num2)
+        return result
+    case "-" :
+        result.calc = Number(num1) - Number(num2)
+        return result
+    case "*" :
+        result.calc = Number(num1) * Number(num2)
+        return result
+    case "/" :
+        result.calc = Number(num1) / Number(num2)
+        return result
+    case "%" :
+        result.calc = Number(num1) % Number(num2)
+        
+      console.log(`계산끝난 값들 : ${JSON.stringify(result)}`)
+      return result
+  }
+}
+
+app.post("/api/basic/calc", (req, res)=>{
+  const {num1, num2, opcode} = req.body
+  console.log(`넘어온 JSON 값 : ${JSON.stringify(req.body)}`)
+  console.log(`숫자 1 : ${num1}`)
+  console.log(`숫자 2 : ${num2}`)
+  console.log(`연산자 : ${opcode}`)
+  const json = computeCALC(num1, num2, opcode)
+  console.log(`계산된 JSON 값 : ${JSON.stringify(json)}`)
+  res.json(json)
+})
+
+
