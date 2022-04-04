@@ -14,6 +14,7 @@ export default function Calc() {
     }
     const onClick = async (e) => {
         e.preventDefault()
+        alert(`게산 결과 : ${JSON.stringify(inputs)}`)
         switch (opcode){
             case "+" :
                 return setResult(Number(num1) + Number(num2))
@@ -25,6 +26,7 @@ export default function Calc() {
                 return setResult(Number(num1) / Number(num2))
             case "%" :
                 return setResult(Number(num1) % Number(num2))
+                
         }
     }
     return (<>

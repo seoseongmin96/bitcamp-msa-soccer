@@ -17,7 +17,7 @@ export default function TeamForm(){
             <form action="">
             <div className={style.row}>
                 <div className={style.col25}>
-                    <label className={style.label} htmlFor="teamId">팀 ID</label>
+                    <label className={style.label} htmlFor="TeamId">팀 ID</label>
                 </div>
                 <div className={style.col75}>
                     <input type="text" onChange={handleChange} className={style.inputText} id="TeamId" name="TeamId"/>
@@ -25,7 +25,7 @@ export default function TeamForm(){
             </div>
             <div className={style.row}>
                 <div className={style.col25}>
-                    <label className={style.label} htmlFor="homeTown">연고지</label>
+                    <label className={style.label} htmlFor="HomeTown">연고지</label>
                 </div>
                 <div className={style.col75}>
                     <input type="text" onChange={handleChange} className={style.inputText} id="HomeTown" name="HomeTown"/>
@@ -33,7 +33,7 @@ export default function TeamForm(){
             </div>
             <div className={style.row}>
                 <div className={style.col25}>
-                    <label className={style.label} htmlFor="teamName">팀명</label>
+                    <label className={style.label} htmlFor="TeamName">팀명</label>
                 </div>
                 <div className={style.col75}>
                     <input type="text" onChange={handleChange} className={style.inputText} id="TeamName" name="TeamName"/>

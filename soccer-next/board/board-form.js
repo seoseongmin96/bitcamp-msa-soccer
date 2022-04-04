@@ -1,6 +1,7 @@
 import style from "board/style/board-form.module.css"
 import React, {useState} from 'react'
-export default function TeamForm(){
+import axios from "axios";
+export default function BoardForm(){
     const [inputs, setInputs] = useState({})
     const {passengerId, name, teamId, subject} = inputs;
     const handleChange = (e) => {
@@ -14,6 +15,10 @@ export default function TeamForm(){
         
         
         alert(`등록할 게시글 : ${JSON.stringify(inputs)}`)
+        axios.post('http://localhost:5000/api/board/write', inputs).then(res => {
+            alert(JSON.stringify(res.data))
+        })
+        .catch(err => alert(err))
     }
     return (<>
         <h1>게시글 등록</h1>
